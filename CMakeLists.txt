@@ -3,7 +3,7 @@ set (CMAKE_CXX_STANDARD 11)
 project(isi_hes_msgs)
 
 find_package(catkin REQUIRED COMPONENTS
-                roscpp rospy std_msgs message_generation 
+                roscpp rospy std_msgs geometry_msgs message_generation 
             )
 
 include_directories(
@@ -19,10 +19,11 @@ add_message_files(
 generate_messages(
   DEPENDENCIES
   std_msgs
+  geometry_msgs
 )
  
 catkin_package( 
     INCLUDE_DIRS
-	CATKIN_DEPENDS roscpp nodelet std_msgs sensor_msgs message_runtime
+	CATKIN_DEPENDS roscpp std_msgs geometry_msgs message_runtime
 #  DEPENDS system_lib
 )
